@@ -8,7 +8,10 @@
 
 # terraform-google-gcr
 
-A [Terraform] module for [Google Cloud Platform (GCP)][gcp].
+A [Terraform] module for deploying and managing a [Google Container Registry](https://cloud.google.com/container-registry) on [Google Cloud Platform (GCP)][gcp].
+Container Registry is a single place for your team to manage Docker images,
+perform vulnerability analysis, and decide who can access what with fine-grained access control.
+Existing CI/CD integrations let you set up fully automated Docker pipelines to get fast feedback.
 
 **_This module supports Terraform version 1
 and is compatible with the Terraform Google Provider version 4._**
@@ -39,7 +42,7 @@ secure, and production-grade cloud infrastructure.
 
 ## Module Features
 
-This module implements the following terraform resources:
+This module implements the following Terraform resources:
 
 - `google_container_registry`
 - `google_storage_bucket_iam_member`
@@ -98,9 +101,29 @@ See [variables.tf] and [examples/] for details and use-cases.
 
   A set of identities that will be able to pull images from GCR.
 
+  Example:
+
+  ```hcl
+  pull_members = [
+    "user:example@mineiros.io",
+    "group:example@mineiros.io",
+    "serviceAccount: example@mineiros-testing.iam.gserviceaccount.com",
+  ]
+  ```
+
 - [**`push_members`**](#var-push_members): *(Optional `set(string)`)*<a name="var-push_members"></a>
 
   A set of identities that will be able to pull&push images from GCR.
+
+  Example:
+
+  ```hcl
+  pull_members = [
+    "user:example@mineiros.io",
+    "group:example@mineiros.io",
+    "serviceAccount: example@mineiros-testing.iam.gserviceaccount.com",
+  ]
+  ```
 
 ## Module Outputs
 
