@@ -107,7 +107,7 @@ See [variables.tf] and [examples/] for details and use-cases.
   pull_members = [
     "user:example@mineiros.io",
     "group:example@mineiros.io",
-    "serviceAccount: example@mineiros-testing.iam.gserviceaccount.com",
+    "serviceAccount:example@mineiros-testing.iam.gserviceaccount.com",
   ]
   ```
 
@@ -121,7 +121,7 @@ See [variables.tf] and [examples/] for details and use-cases.
   pull_members = [
     "user:example@mineiros.io",
     "group:example@mineiros.io",
-    "serviceAccount: example@mineiros-testing.iam.gserviceaccount.com",
+    "serviceAccount:example@mineiros-testing.iam.gserviceaccount.com",
   ]
   ```
 

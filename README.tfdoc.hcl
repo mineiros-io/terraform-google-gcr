@@ -139,7 +139,7 @@ section {
             pull_members = [
               "user:example@mineiros.io",
               "group:example@mineiros.io",
-              "serviceAccount: example@mineiros-testing.iam.gserviceaccount.com",
+              "serviceAccount:example@mineiros-testing.iam.gserviceaccount.com",
             ]
           END
         }
@@ -153,7 +153,7 @@ section {
             pull_members = [
               "user:example@mineiros.io",
               "group:example@mineiros.io",
-              "serviceAccount: example@mineiros-testing.iam.gserviceaccount.com",
+              "serviceAccount:example@mineiros-testing.iam.gserviceaccount.com",
             ]
           END
         }
