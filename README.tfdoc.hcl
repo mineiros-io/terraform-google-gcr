@@ -131,8 +131,8 @@ section {
         title = "Extended Resource Configuration"
 
         variable "pull_members" {
-          type        = set(string)
-          description = <<-END
+          type           = set(string)
+          description    = <<-END
             A set of identities that will be able to pull images from GCR.
           END
           readme_example = <<-END
@@ -145,8 +145,8 @@ section {
         }
 
         variable "push_members" {
-          type        = set(string)
-          description = <<-END
+          type           = set(string)
+          description    = <<-END
             A set of identities that will be able to pull&push images from GCR.
           END
           readme_example = <<-END
@@ -165,31 +165,52 @@ section {
     title   = "Module Outputs"
     content = <<-END
       The following attributes are exported in the outputs of the module:
-
-      - **`module_enabled`**
-
-        Whether this module is enabled.
-
-      - **`module_inputs`**
-
-        A map of all module arguments. Omitted optional arguments will be represented with their actual defaults.
-
-      - **`project`**
-
-        The ID of the project in which the resources belong.
-
-      - **`gcr`**
-
-        All outputs of the created GCR resource.
-
-      - **`pull_iam_members`**
-
-        A map of outputs, keyed by the member id, of all iam_members allowed to pull images to GCR.
-
-      - **`push_iam_members`**
-
-        A map of outputs, keyed by the member id, of all iam_members allowed to push images to GCR.
     END
+
+    output "module_enabled" {
+      type        = bool
+      description = <<-END
+        Whether this module is enabled.
+      END
+    }
+
+    output "module_inputs" {
+      type        = object(module_inputs)
+      description = <<-END
+        A map of all module arguments. Omitted optional arguments will be
+        represented with their actual defaults.
+      END
+    }
+
+    output "project" {
+      type        = string
+      description = <<-END
+        The ID of the project in which the resources belong.
+      END
+    }
+
+    output "gcr" {
+      type        = object(gcr)
+      description = <<-END
+        All outputs of the created GCR resource.
+      END
+    }
+
+    output "pull_iam_members" {
+      type        = object(pull_iam_members)
+      description = <<-END
+        A map of outputs, keyed by the member id, of all iam_members allowed to
+        pull images to GCR.
+      END
+    }
+
+    output "push_iam_members" {
+      type        = object(push_iam_members)
+      description = <<-END
+        A map of outputs, keyed by the member id, of all iam_members allowed to
+        push images to GCR.
+      END
+    }
   }
 
   section {

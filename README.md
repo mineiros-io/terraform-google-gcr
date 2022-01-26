@@ -129,29 +129,32 @@ See [variables.tf] and [examples/] for details and use-cases.
 
 The following attributes are exported in the outputs of the module:
 
-- **`module_enabled`**
+- [**`module_enabled`**](#output-module_enabled): *(`bool`)*<a name="output-module_enabled"></a>
 
   Whether this module is enabled.
 
-- **`module_inputs`**
+- [**`module_inputs`**](#output-module_inputs): *(`object(module_inputs)`)*<a name="output-module_inputs"></a>
 
-  A map of all module arguments. Omitted optional arguments will be represented with their actual defaults.
+  A map of all module arguments. Omitted optional arguments will be
+  represented with their actual defaults.
 
-- **`project`**
+- [**`project`**](#output-project): *(`string`)*<a name="output-project"></a>
 
   The ID of the project in which the resources belong.
 
-- **`gcr`**
+- [**`gcr`**](#output-gcr): *(`object(gcr)`)*<a name="output-gcr"></a>
 
   All outputs of the created GCR resource.
 
-- **`pull_iam_members`**
+- [**`pull_iam_members`**](#output-pull_iam_members): *(`object(pull_iam_members)`)*<a name="output-pull_iam_members"></a>
 
-  A map of outputs, keyed by the member id, of all iam_members allowed to pull images to GCR.
+  A map of outputs, keyed by the member id, of all iam_members allowed to
+  pull images to GCR.
 
-- **`push_iam_members`**
+- [**`push_iam_members`**](#output-push_iam_members): *(`object(push_iam_members)`)*<a name="output-push_iam_members"></a>
 
-  A map of outputs, keyed by the member id, of all iam_members allowed to push images to GCR.
+  A map of outputs, keyed by the member id, of all iam_members allowed to
+  push images to GCR.
 
 ## External Documentation
 
